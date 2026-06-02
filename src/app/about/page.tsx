@@ -246,23 +246,23 @@ export default function AboutPage() {
   };
 
   const row1Brands = [
-    { name: "Kingspan", logo: <KingspanLogo /> },
-    { name: "JSW", logo: <JSWLogo /> },
+    { name: "Kingspan", img: "/images/logo/kingspan@logotyp.us.png" },
+    { name: "JSW", img: "/images/logo/jsw@logotyp.us.png" },
     { name: "MOUNT", logo: <MountLogo /> },
-    { name: "VOLTAS", logo: <VoltasLogo /> },
-    { name: "DAIKIN", logo: <DaikinLogo /> },
-    { name: "COPELAND", logo: <CopelandLogo /> },
-    { name: "EMERSON", logo: <EmersonLogo /> },
+    { name: "VOLTAS", img: "/images/logo/VOLTAS.NS_BIG.png" },
+    { name: "DAIKIN", img: "/images/logo/daikin@logotyp.us.png" },
+    { name: "COPELAND", img: "/images/logo/copeland@logotyp.us.png" },
+    { name: "EMERSON", img: "/images/logo/emerson-electric@logotyp.us.png" },
   ];
 
   const row2Brands = [
-    { name: "Danfoss", logo: <DanfossLogo /> },
-    { name: "Bitzer", logo: <BitzerLogo /> },
-    { name: "CAREL", logo: <CarelLogo /> },
-    { name: "Dixell", logo: <DixellLogo /> },
-    { name: "Schneider Electric", logo: <SchneiderLogo /> },
-    { name: "Carrier", logo: <CarrierLogo /> },
-    { name: "BLUE STAR", logo: <BlueStarLogo /> },
+    { name: "Danfoss", img: "/images/logo/danfose@logotyp.us.png" },
+    { name: "Bitzer", img: "/images/logo/bitzer@logotyp.us.png" },
+    { name: "CAREL", img: "/images/logo/carel@logotyp.us.png" },
+    { name: "Dixell", img: "/images/logo/dixel.svg" },
+    { name: "Schneider Electric", img: "/images/logo/schneider-electric@logotyp.us.png" },
+    { name: "Carrier", img: "/images/logo/carrier@logotyp.us.png" },
+    { name: "BLUE STAR", img: "/images/logo/bluestar@logotyp.us.png" },
   ];
 
   const services = [
@@ -642,7 +642,27 @@ export default function AboutPage() {
                     key={`${b.name}-1-${idx}`}
                     className="bg-white border border-slate-150/70 shadow-sm rounded-xl py-3 px-8 min-w-[170px] h-16 flex items-center justify-center shrink-0"
                   >
-                    {b.logo}
+                    {b.img ? (
+                      b.name === "CAREL" ? (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={96}
+                          height={24}
+                          className="object-contain max-w-[96px] max-h-6"
+                        />
+                      ) : (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={140}
+                          height={40}
+                          className="object-contain"
+                        />
+                      )
+                    ) : (
+                      b.logo
+                    )}
                   </div>
                 ))}
               </div>
@@ -655,7 +675,27 @@ export default function AboutPage() {
                     key={`${b.name}-1-dup-${idx}`}
                     className="bg-white border border-slate-150/70 shadow-sm rounded-xl py-3 px-8 min-w-[170px] h-16 flex items-center justify-center shrink-0"
                   >
-                    {b.logo}
+                    {b.img ? (
+                      b.name === "CAREL" ? (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={96}
+                          height={24}
+                          className="object-contain max-w-[96px] max-h-6"
+                        />
+                      ) : (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={140}
+                          height={40}
+                          className="object-contain"
+                        />
+                      )
+                    ) : (
+                      b.logo
+                    )}
                   </div>
                 ))}
               </div>
@@ -674,7 +714,27 @@ export default function AboutPage() {
                     key={`${b.name}-2-${idx}`}
                     className="bg-white border border-slate-150/70 shadow-sm rounded-xl py-3 px-8 min-w-[170px] h-16 flex items-center justify-center shrink-0"
                   >
-                    {b.logo}
+                    {b.img ? (
+                      b.name === "CAREL" ? (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={96}
+                          height={24}
+                          className="object-contain max-w-[96px] max-h-6"
+                        />
+                      ) : (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={140}
+                          height={40}
+                          className="object-contain"
+                        />
+                      )
+                    ) : (
+                      b.logo
+                    )}
                   </div>
                 ))}
               </div>
@@ -687,7 +747,27 @@ export default function AboutPage() {
                     key={`${b.name}-2-dup-${idx}`}
                     className="bg-white border border-slate-150/70 shadow-sm rounded-xl py-3 px-8 min-w-[170px] h-16 flex items-center justify-center shrink-0"
                   >
-                    {b.logo}
+                    {b.img ? (
+                      b.name === "CAREL" ? (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={96}
+                          height={24}
+                          className="object-contain max-w-[96px] max-h-6"
+                        />
+                      ) : (
+                        <Image
+                          src={b.img}
+                          alt={b.name}
+                          width={140}
+                          height={40}
+                          className="object-contain"
+                        />
+                      )
+                    ) : (
+                      b.logo
+                    )}
                   </div>
                 ))}
               </div>
