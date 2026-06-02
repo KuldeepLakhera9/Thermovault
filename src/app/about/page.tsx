@@ -260,7 +260,10 @@ export default function AboutPage() {
     { name: "Bitzer", img: "/images/logo/bitzer@logotyp.us.png" },
     { name: "CAREL", img: "/images/logo/carel@logotyp.us.png" },
     { name: "Dixell", img: "/images/logo/dixel.svg" },
-    { name: "Schneider Electric", img: "/images/logo/schneider-electric@logotyp.us.png" },
+    {
+      name: "Schneider Electric",
+      img: "/images/logo/schneider-electric@logotyp.us.png",
+    },
     { name: "Carrier", img: "/images/logo/carrier@logotyp.us.png" },
     { name: "BLUE STAR", img: "/images/logo/bluestar@logotyp.us.png" },
   ];
