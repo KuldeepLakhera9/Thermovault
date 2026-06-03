@@ -4,7 +4,16 @@ import React, { use, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Snowflake, ShieldCheck, Settings, ChevronLeft, Send, CheckCircle2, Wrench, Thermometer } from "lucide-react";
+import {
+  Snowflake,
+  ShieldCheck,
+  Settings,
+  ChevronLeft,
+  Send,
+  CheckCircle2,
+  Wrench,
+  Thermometer,
+} from "lucide-react";
 
 interface ProductDetail {
   name: string;
@@ -25,11 +34,22 @@ const productDb: Record<string, ProductDetail> = {
       "Facings: Pre-painted Galvanized Steel (PPGI), Stainless Steel (SS 304/316), or Alu-Zinc.",
       "Joint Type: Double tongue-and-groove joint with cam-lock alignment mechanisms.",
     ],
-    industries: ["Commercial cold rooms", "Pharmaceutical cleanrooms", "Food processing facilities", "Walk-in freezers"],
-    detailedDesc: "High-density Polyurethane Foam (PUF) panels engineered for superior thermal insulation and structural integrity. Featuring pre-fabricated cam-locks that draw panels together tightly, compressing the tongue-and-groove joints to create an airtight vapor barrier that reduces thermal leakage and energy costs.",
-    features: ["Flame retardant PUF core", "Airtight cam-lock system", "Corrosion resistant skins", "High load-bearing capability"],
+    industries: [
+      "Commercial cold rooms",
+      "Pharmaceutical cleanrooms",
+      "Food processing facilities",
+      "Walk-in freezers",
+    ],
+    detailedDesc:
+      "High-density Polyurethane Foam (PUF) panels engineered for superior thermal insulation and structural integrity. Featuring pre-fabricated cam-locks that draw panels together tightly, compressing the tongue-and-groove joints to create an airtight vapor barrier that reduces thermal leakage and energy costs.",
+    features: [
+      "Flame retardant PUF core",
+      "Airtight cam-lock system",
+      "Corrosion resistant skins",
+      "High load-bearing capability",
+    ],
   },
-  "compressors": {
+  compressors: {
     name: "High-Efficiency Compressors",
     category: "Compressors",
     specs: [
@@ -38,11 +58,22 @@ const productDb: Record<string, ProductDetail> = {
       "Power Ratings: 1.5 HP to 50+ HP matching custom heat load profiles.",
       "Refrigerant Compatibility: R404A, R134a, R407C, R448A.",
     ],
-    industries: ["Industrial cold stores", "Commercial walk-in coolers", "Ripening chambers", "Chiller units"],
-    detailedDesc: "Premium refrigeration compressors selected for quiet operation, longevity, and high Coefficient of Performance (COP). Designed to withstand severe tropical ambient temperatures and unstable voltage profiles commonly found in agricultural hubs.",
-    features: ["Intelligent motor protection", "High volumetric efficiency", "Vibration absorption mounting", "Low power consumption"],
+    industries: [
+      "Industrial cold stores",
+      "Commercial walk-in coolers",
+      "Ripening chambers",
+      "Chiller units",
+    ],
+    detailedDesc:
+      "Premium refrigeration compressors selected for quiet operation, longevity, and high Coefficient of Performance (COP). Designed to withstand severe tropical ambient temperatures and unstable voltage profiles commonly found in agricultural hubs.",
+    features: [
+      "Intelligent motor protection",
+      "High volumetric efficiency",
+      "Vibration absorption mounting",
+      "Low power consumption",
+    ],
   },
-  "evaporators": {
+  evaporators: {
     name: "Forced-Draft Evaporators & Air Coolers",
     category: "Evaporators",
     specs: [
@@ -51,9 +82,20 @@ const productDb: Record<string, ProductDetail> = {
       "Defrosting: Electrical heater grids, hot gas bypass, or water wash options.",
       "Casing: Corrosion-proof powder-coated aluminum or stainless steel sheets.",
     ],
-    industries: ["Blast freezing tunnels", "Supermarkets", "Agricultural warehouses", "Food processing units"],
-    detailedDesc: "High-performance air coolers engineered to optimize air distribution and heat transfer rates. Featuring low-noise axial fans and deep fin-to-tube contacts to achieve fast pull-down times and maintain uniform temperature distribution.",
-    features: ["Uniform air throw profiles", "Optimized defrost cycles", "Corrosion-resistant casing", "Easy maintenance access"],
+    industries: [
+      "Blast freezing tunnels",
+      "Supermarkets",
+      "Agricultural warehouses",
+      "Food processing units",
+    ],
+    detailedDesc:
+      "High-performance air coolers engineered to optimize air distribution and heat transfer rates. Featuring low-noise axial fans and deep fin-to-tube contacts to achieve fast pull-down times and maintain uniform temperature distribution.",
+    features: [
+      "Uniform air throw profiles",
+      "Optimized defrost cycles",
+      "Corrosion-resistant casing",
+      "Easy maintenance access",
+    ],
   },
   "condensing-units": {
     name: "Outdoor Condensing Units",
@@ -64,9 +106,20 @@ const productDb: Record<string, ProductDetail> = {
       "Enclosure: Weatherproof, sound-insulated galvanized steel cabinets.",
       "Controls: Integrated dual high/low pressure cut-outs and oil pressure safety switches.",
     ],
-    industries: ["Hotels & Restaurants", "Hospitals & Laboratories", "Food Retail", "Dairy Chilling Depots"],
-    detailedDesc: "Robust outdoor condensing plants that house the compressor, condenser coil, and fan. Engineered with heavy-duty weather guards and anti-corrosive coil coatings to perform reliably under direct sunlight and high ambient temperatures.",
-    features: ["Weatherproof housing", "Enhanced heat rejection", "Pre-wired electrical panels", "Easy service access valves"],
+    industries: [
+      "Hotels & Restaurants",
+      "Hospitals & Laboratories",
+      "Food Retail",
+      "Dairy Chilling Depots",
+    ],
+    detailedDesc:
+      "Robust outdoor condensing plants that house the compressor, condenser coil, and fan. Engineered with heavy-duty weather guards and anti-corrosive coil coatings to perform reliably under direct sunlight and high ambient temperatures.",
+    features: [
+      "Weatherproof housing",
+      "Enhanced heat rejection",
+      "Pre-wired electrical panels",
+      "Easy service access valves",
+    ],
   },
   "control-panels": {
     name: "Smart Control Panels",
@@ -77,9 +130,20 @@ const productDb: Record<string, ProductDetail> = {
       "Safety: Overload relays, phase preventers, and voltage stabilizers.",
       "Alarms: High/low temp warnings, power failure alerts, and door-open alarms.",
     ],
-    industries: ["Vaccine cold chain storage", "Food retail operations", "Export ripening complexes", "Unattended facilities"],
-    detailedDesc: "Custom-configured electrical starter and control panels. Features clear digital readouts, user-friendly temperature tuning, automated defrost schedules, and advanced telemetry interfaces to push real-time alerts to phone apps.",
-    features: ["IoT telemetry integration", "Phase failure protection", "Visual and audible alarms", "Pre-programmed cycles"],
+    industries: [
+      "Vaccine cold chain storage",
+      "Food retail operations",
+      "Export ripening complexes",
+      "Unattended facilities",
+    ],
+    detailedDesc:
+      "Custom-configured electrical starter and control panels. Features clear digital readouts, user-friendly temperature tuning, automated defrost schedules, and advanced telemetry interfaces to push real-time alerts to phone apps.",
+    features: [
+      "IoT telemetry integration",
+      "Phase failure protection",
+      "Visual and audible alarms",
+      "Pre-programmed cycles",
+    ],
   },
   "cold-room-doors": {
     name: "Insulated Cold Room Doors",
@@ -90,9 +154,20 @@ const productDb: Record<string, ProductDetail> = {
       "Heating: 230V low-wattage perimeter heater wire for freezer units.",
       "Safety: Inside safety release knob (preventing accidental lock-ins).",
     ],
-    industries: ["Logistics hubs", "Distribution warehouses", "Commercial kitchens", "Cleanroom entries"],
-    detailedDesc: "Heavy-duty thermal barrier doors built to withstand high frequency cycles. Outfitted with dual-lip EPDM gaskets to maintain a tight seal, and low-temperature heater cables to prevent ice build-up along the door frame.",
-    features: ["Perimeter frame heaters", "Emergency internal release", "Heavy-duty tracking system", "Impact-resistant frames"],
+    industries: [
+      "Logistics hubs",
+      "Distribution warehouses",
+      "Commercial kitchens",
+      "Cleanroom entries",
+    ],
+    detailedDesc:
+      "Heavy-duty thermal barrier doors built to withstand high frequency cycles. Outfitted with dual-lip EPDM gaskets to maintain a tight seal, and low-temperature heater cables to prevent ice build-up along the door frame.",
+    features: [
+      "Perimeter frame heaters",
+      "Emergency internal release",
+      "Heavy-duty tracking system",
+      "Impact-resistant frames",
+    ],
   },
   "doors-hardware": {
     name: "Heavy-Duty Door Hardware & Hinges",
@@ -103,9 +178,19 @@ const productDb: Record<string, ProductDetail> = {
       "Locks: Padlockable lock latches with heavy strike brackets.",
       "Fasteners: Stainless steel grade 304 mounting screws.",
     ],
-    industries: ["Replacement spares", "Custom door manufacturing", "Heavy usage cold rooms"],
-    detailedDesc: "High-grade hinges, latches, sliding tracks, and brackets. Built with wear-resistant self-lubricating plastics and anti-corrosive alloys to ensure smooth swings and airtight sealing over hundreds of thousands of cycles.",
-    features: ["Rise-run self closing", "Corrosion-free finishes", "Airtight compression latching", "High weight ratings"],
+    industries: [
+      "Replacement spares",
+      "Custom door manufacturing",
+      "Heavy usage cold rooms",
+    ],
+    detailedDesc:
+      "High-grade hinges, latches, sliding tracks, and brackets. Built with wear-resistant self-lubricating plastics and anti-corrosive alloys to ensure smooth swings and airtight sealing over hundreds of thousands of cycles.",
+    features: [
+      "Rise-run self closing",
+      "Corrosion-free finishes",
+      "Airtight compression latching",
+      "High weight ratings",
+    ],
   },
   "copper-piping": {
     name: "Refrigeration Grade Copper Piping",
@@ -116,9 +201,19 @@ const productDb: Record<string, ProductDetail> = {
       "Insulation: Closed-cell elastomeric nitrile rubber foam tubing.",
       "Pressure: Tested to withstand up to 450 PSI operating pressures.",
     ],
-    industries: ["Site piping installations", "Evaporator-Condenser rigging", "System overhauls"],
-    detailedDesc: "High-purity seamless copper tubes selected specifically for refrigerant flow. Features uniform wall thickness, zero internal impurities, and pre-insulated thermal jackets to prevent suction line condensation and maximize thermal efficiency.",
-    features: ["Zero moisture ingress", "Smooth inner wall profiles", "Flexible bending properties", "Heavy thermal sleeve insulation"],
+    industries: [
+      "Site piping installations",
+      "Evaporator-Condenser rigging",
+      "System overhauls",
+    ],
+    detailedDesc:
+      "High-purity seamless copper tubes selected specifically for refrigerant flow. Features uniform wall thickness, zero internal impurities, and pre-insulated thermal jackets to prevent suction line condensation and maximize thermal efficiency.",
+    features: [
+      "Zero moisture ingress",
+      "Smooth inner wall profiles",
+      "Flexible bending properties",
+      "Heavy thermal sleeve insulation",
+    ],
   },
   "electrical-systems": {
     name: "Cold Storage Electrical Systems",
@@ -129,9 +224,19 @@ const productDb: Record<string, ProductDetail> = {
       "Lighting: IP65 low-temperature LED linear light fixtures.",
       "Conduits: Rigid PVC or metal conduit routes preventing rodent bite issues.",
     ],
-    industries: ["New facility setups", "Safety retrofits", "Automation upgrades"],
-    detailedDesc: "End-to-end electrical wiring layouts designed to meet industrial safety standards. Outfitted with high-durability switchgear, watertight junctions, and specialized cold-room lighting that functions continuously without generating additional heat.",
-    features: ["Flame retardant cabling", "IP65 wet-location lights", "Short circuit protection", "Aesthetic layout ducts"],
+    industries: [
+      "New facility setups",
+      "Safety retrofits",
+      "Automation upgrades",
+    ],
+    detailedDesc:
+      "End-to-end electrical wiring layouts designed to meet industrial safety standards. Outfitted with high-durability switchgear, watertight junctions, and specialized cold-room lighting that functions continuously without generating additional heat.",
+    features: [
+      "Flame retardant cabling",
+      "IP65 wet-location lights",
+      "Short circuit protection",
+      "Aesthetic layout ducts",
+    ],
   },
   "refrigeration-accessories": {
     name: "Refrigeration System Accessories",
@@ -142,9 +247,19 @@ const productDb: Record<string, ProductDetail> = {
       "Indicators: Moisture-liquid sight glasses with color status grids.",
       "Accumulators: Suction line accumulators preventing liquid slugging.",
     ],
-    industries: ["System assembly", "AMC maintenance servicing", "Refrigeration retrofits"],
-    detailedDesc: "Essential ancillary components including expansion valves, filter dryers, solenoid valves, and accumulators. Every accessory is sourced from leading global brands to ensure absolute reliability and prevent compressor failures.",
-    features: ["TXV precision metering", "High-capacity core dryers", "Liquid backup protection", "Quick diagnostics windows"],
+    industries: [
+      "System assembly",
+      "AMC maintenance servicing",
+      "Refrigeration retrofits",
+    ],
+    detailedDesc:
+      "Essential ancillary components including expansion valves, filter dryers, solenoid valves, and accumulators. Every accessory is sourced from leading global brands to ensure absolute reliability and prevent compressor failures.",
+    features: [
+      "TXV precision metering",
+      "High-capacity core dryers",
+      "Liquid backup protection",
+      "Quick diagnostics windows",
+    ],
   },
   "insulation-materials": {
     name: "Specialty Insulation Materials",
@@ -155,9 +270,20 @@ const productDb: Record<string, ProductDetail> = {
       "Thermal Conductivity: Under 0.028 W/m·K at mean temperatures.",
       "Fire Rating: Class A / Class 1 flame spread index compliance.",
     ],
-    industries: ["Floor underdeck insulation", "Ceiling overlays", "Hot water lines", "Vibration pads"],
-    detailedDesc: "High-grade insulation materials for underdeck floors, ceilings, and duct piping. We select optimal foam or fiber matrices to match the temperature differential, preventing floor buckling and underdeck frost heave.",
-    features: ["High compression strength", "Zero water absorption", "Fire-resistant variants", "Low thermal conductivity"],
+    industries: [
+      "Floor underdeck insulation",
+      "Ceiling overlays",
+      "Hot water lines",
+      "Vibration pads",
+    ],
+    detailedDesc:
+      "High-grade insulation materials for underdeck floors, ceilings, and duct piping. We select optimal foam or fiber matrices to match the temperature differential, preventing floor buckling and underdeck frost heave.",
+    features: [
+      "High compression strength",
+      "Zero water absorption",
+      "Fire-resistant variants",
+      "Low thermal conductivity",
+    ],
   },
   "spare-parts": {
     name: "Genuine Replacement Spare Parts",
@@ -168,9 +294,19 @@ const productDb: Record<string, ProductDetail> = {
       "Sensors: NTC/PT100 temperature probes, pressure transducers.",
       "Refrigerants: Pure grade cylinder gases (R404A, R134a, R410A).",
     ],
-    industries: ["Breakdown repairs", "Preventative AMC replacements", "Emergency stock"],
-    detailedDesc: "Comprehensive inventory of replacement parts to keep cold storage facilities operating continuously. Sourced directly from manufacturers to ensure original specifications, maximum performance, and compatibility.",
-    features: ["OEM certified parts", "Emergency stock availability", "Calibrated sensor grids", "High durability ratings"],
+    industries: [
+      "Breakdown repairs",
+      "Preventative AMC replacements",
+      "Emergency stock",
+    ],
+    detailedDesc:
+      "Comprehensive inventory of replacement parts to keep cold storage facilities operating continuously. Sourced directly from manufacturers to ensure original specifications, maximum performance, and compatibility.",
+    features: [
+      "OEM certified parts",
+      "Emergency stock availability",
+      "Calibrated sensor grids",
+      "High durability ratings",
+    ],
   },
 };
 
@@ -184,9 +320,19 @@ productDb["doors--hardware"] = productDb["doors-hardware"] = {
     "Locks: Padlockable lock latches with heavy strike brackets.",
     "Fasteners: Stainless steel grade 304 mounting screws.",
   ],
-  industries: ["Replacement spares", "Custom door manufacturing", "Heavy usage cold rooms"],
-  detailedDesc: "High-grade hinges, latches, sliding tracks, and brackets. Built with wear-resistant self-lubricating plastics and anti-corrosive alloys to ensure smooth swings and airtight sealing over hundreds of thousands of cycles.",
-  features: ["Rise-run self closing", "Corrosion-free finishes", "Airtight compression latching", "High weight ratings"],
+  industries: [
+    "Replacement spares",
+    "Custom door manufacturing",
+    "Heavy usage cold rooms",
+  ],
+  detailedDesc:
+    "High-grade hinges, latches, sliding tracks, and brackets. Built with wear-resistant self-lubricating plastics and anti-corrosive alloys to ensure smooth swings and airtight sealing over hundreds of thousands of cycles.",
+  features: [
+    "Rise-run self closing",
+    "Corrosion-free finishes",
+    "Airtight compression latching",
+    "High weight ratings",
+  ],
 };
 
 export default function ProductDetailPage({
@@ -253,7 +399,10 @@ export default function ProductDetailPage({
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {product.features?.map((feat, idx) => (
-                  <div key={idx} className="flex items-center gap-2 rounded-xl bg-white/2 border border-white/5 p-3">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 rounded-xl bg-white/2 border border-white/5 p-3"
+                  >
                     <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-accent/10 text-teal-light">
                       <Snowflake className="h-3 w-3" />
                     </div>
@@ -270,7 +419,10 @@ export default function ProductDetailPage({
               </h3>
               <ul className="space-y-2 text-xs">
                 {product.specs.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 leading-relaxed text-silver/90">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2.5 leading-relaxed text-silver/90"
+                  >
                     <ShieldCheck className="h-4 w-4 text-teal-light shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
@@ -298,34 +450,47 @@ export default function ProductDetailPage({
 
           {/* Callback Quote Intake form */}
           <div className="rounded-2xl border border-white/5 bg-[#0C2340]/60 p-6 shadow-lg h-fit">
-            <h3 className="text-sm font-bold text-white mb-2 font-display">Technical Consultation</h3>
+            <h3 className="text-sm font-bold text-white mb-2 font-display">
+              Technical Consultation
+            </h3>
             <p className="text-xs text-silver/80 mb-4 leading-relaxed">
-              Need technical sheets, CAD drawings, or pricing details for this component? Request callback.
+              Need technical sheets, CAD drawings, or pricing details for this
+              component? Request callback.
             </p>
 
             {formSent ? (
               <div className="rounded-xl border border-teal-accent/20 bg-teal-accent/5 p-6 text-center space-y-2">
                 <CheckCircle2 className="h-8 w-8 text-teal-light mx-auto" />
-                <h4 className="text-xs font-bold text-white">Callback Scheduled</h4>
+                <h4 className="text-xs font-bold text-white">
+                  Callback Scheduled
+                </h4>
                 <p className="text-[10px] text-silver leading-relaxed">
-                  Our application engineer will contact you within 2 working hours.
+                  Our application engineer will contact you within 2 working
+                  hours.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleCallbackSubmit} className="space-y-3">
                 <div>
-                  <label className="text-[9px] text-silver font-mono block mb-1">Your Name</label>
+                  <label className="text-[9px] text-silver font-mono block mb-1">
+                    Your Name
+                  </label>
                   <input
                     type="text"
                     required
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) =>
+                      setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))
+                    }
+                    maxLength={10}
                     placeholder="e.g. Kuldeep"
                     className="w-full rounded-xl bg-[#0c2340] border border-white/5 p-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-teal-light"
                   />
                 </div>
                 <div>
-                  <label className="text-[9px] text-silver font-mono block mb-1">Mobile Number</label>
+                  <label className="text-[9px] text-silver font-mono block mb-1">
+                    Mobile Number
+                  </label>
                   <input
                     type="tel"
                     required

@@ -51,10 +51,15 @@ export default function MeatServicesPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Interactive Challenges Hover states
-  const [hoveredChallengeIdx, setHoveredChallengeIdx] = useState<number | null>(null);
+  const [hoveredChallengeIdx, setHoveredChallengeIdx] = useState<number | null>(
+    null,
+  );
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
 
-  const handleChallengeMouseMove = (e: React.MouseEvent<HTMLDivElement>, idx: number) => {
+  const handleChallengeMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    idx: number,
+  ) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMouseCoords({
       x: e.clientX - rect.left,
@@ -84,7 +89,8 @@ export default function MeatServicesPage() {
       severity: 95,
       severityLabel: "95% (Critical Risk)",
       code: "CRIT-BACT-01",
-      mitigation: "SS-304 interior panels, hermetic joint sealings, and continuous temperature logging below 2°C."
+      mitigation:
+        "SS-304 interior panels, hermetic joint sealings, and continuous temperature logging below 2°C.",
     },
     {
       title: "Temperature Fluctuations",
@@ -96,7 +102,8 @@ export default function MeatServicesPage() {
       severity: 88,
       severityLabel: "88% (High Warning)",
       code: "WARN-TEMP-02",
-      mitigation: "PLC automation controls and double-redundant cooling loops with automatic switchover."
+      mitigation:
+        "PLC automation controls and double-redundant cooling loops with automatic switchover.",
     },
     {
       title: "Cross Contamination",
@@ -108,7 +115,8 @@ export default function MeatServicesPage() {
       severity: 85,
       severityLabel: "85% (High Warning)",
       code: "WARN-CONT-03",
-      mitigation: "Airlock partitions, high-velocity air curtains at doors, and anti-microbial epoxy flooring."
+      mitigation:
+        "Airlock partitions, high-velocity air curtains at doors, and anti-microbial epoxy flooring.",
     },
     {
       title: "Freezer Burn & Dehydration",
@@ -120,7 +128,8 @@ export default function MeatServicesPage() {
       severity: 78,
       severityLabel: "78% (Medium Risk)",
       code: "QUAL-BURN-04",
-      mitigation: "Ultra-fast blast freezing down to -40°C, rapidly locking moisture at cellular level."
+      mitigation:
+        "Ultra-fast blast freezing down to -40°C, rapidly locking moisture at cellular level.",
     },
     {
       title: "High Energy Overhead",
@@ -132,7 +141,8 @@ export default function MeatServicesPage() {
       severity: 72,
       severityLabel: "72% (Medium Risk)",
       code: "COST-ENER-05",
-      mitigation: "VFD compressor grids and 120mm high-density polyurethane (PUF) insulation panels."
+      mitigation:
+        "VFD compressor grids and 120mm high-density polyurethane (PUF) insulation panels.",
     },
     {
       title: "Power Grid Failures",
@@ -144,7 +154,8 @@ export default function MeatServicesPage() {
       severity: 92,
       severityLabel: "92% (Critical Risk)",
       code: "CRIT-PWR-06",
-      mitigation: "Automatic generator failover relays and IoT phase-failure alerts."
+      mitigation:
+        "Automatic generator failover relays and IoT phase-failure alerts.",
     },
   ];
 
@@ -232,19 +243,19 @@ export default function MeatServicesPage() {
       {/* Hero Section */}
       <section className="relative bg-[#0C2340] text-white pt-16 pb-24 overflow-hidden min-h-[620px] flex items-center">
         {/* Engineering Blueprint Grid Background Overlay */}
-        <div 
-          className="absolute inset-0 opacity-15 pointer-events-none z-0" 
+        <div
+          className="absolute inset-0 opacity-15 pointer-events-none z-0"
           style={{
             backgroundImage: `
               radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
               linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
               linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
             `,
-            backgroundSize: "20px 20px, 40px 40px, 40px 40px"
+            backgroundSize: "20px 20px, 40px 40px, 40px 40px",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-[#0C2340] via-[#0E2F56]/90 to-[#0A1A30]/95 z-0" />
-        
+
         {/* Soft glowing ambient orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[130px] pointer-events-none z-0" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none z-0" />
@@ -252,16 +263,22 @@ export default function MeatServicesPage() {
         <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb Navigation */}
           <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-8">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
             <span>&gt;</span>
-            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+            <Link
+              href="/services"
+              className="hover:text-white transition-colors"
+            >
+              Services
+            </Link>
             <span>&gt;</span>
             <span className="text-blue-400">Meat & Poultry</span>
           </div>
 
           {/* Immersive 3-Column Split-Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            
             {/* Left Side: Text Sheet (col-span-5) */}
             <div className="lg:col-span-5 space-y-6">
               {/* Category tag */}
@@ -280,19 +297,34 @@ export default function MeatServicesPage() {
 
               {/* Description */}
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-body">
-                Advanced cold chain solutions to preserve freshness, ensure hygiene and 
-                extend shelf life of meat, poultry & processed products. From farm to fork – we keep it safe.
+                Advanced cold chain solutions to preserve freshness, ensure
+                hygiene and extend shelf life of meat, poultry & processed
+                products. From farm to fork – we keep it safe.
               </p>
 
               {/* Temp Pills (Premium Capsule Design) */}
               <div className="flex flex-wrap gap-4 pt-1">
                 <div className="flex items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-950/50 via-[#0A1A30]/50 to-blue-900/30 border border-blue-500/30 px-4 py-2 text-xs font-bold font-mono text-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.15)] backdrop-blur-md hover:border-blue-400/50 transition-all select-none">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500/20 text-blue-400 text-[10px] shadow-[0_0_8px_rgba(59,130,246,0.4)] animate-pulse shrink-0">❄</span>
-                  <span>Chilled: <strong className="text-white font-extrabold tracking-wide">0°C to 4°C</strong></span>
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500/20 text-blue-400 text-[10px] shadow-[0_0_8px_rgba(59,130,246,0.4)] animate-pulse shrink-0">
+                    ❄
+                  </span>
+                  <span>
+                    Chilled:{" "}
+                    <strong className="text-white font-extrabold tracking-wide">
+                      0°C to 4°C
+                    </strong>
+                  </span>
                 </div>
                 <div className="flex items-center gap-2.5 rounded-full bg-gradient-to-r from-cyan-950/50 via-[#0A1A30]/50 to-cyan-900/30 border border-cyan-500/30 px-4 py-2 text-xs font-bold font-mono text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.15)] backdrop-blur-md hover:border-cyan-400/50 transition-all select-none">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] shadow-[0_0_8px_rgba(34,211,238,0.4)] animate-pulse shrink-0">❄</span>
-                  <span>Frozen: <strong className="text-white font-extrabold tracking-wide">-18°C to -25°C</strong></span>
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] shadow-[0_0_8px_rgba(34,211,238,0.4)] animate-pulse shrink-0">
+                    ❄
+                  </span>
+                  <span>
+                    Frozen:{" "}
+                    <strong className="text-white font-extrabold tracking-wide">
+                      -18°C to -25°C
+                    </strong>
+                  </span>
                 </div>
               </div>
 
@@ -331,25 +363,29 @@ export default function MeatServicesPage() {
             {/* Center Column: Premium CAD Blueprint & Product Visualizer (col-span-3) */}
             <div className="lg:col-span-3 hidden lg:flex justify-center relative">
               <div className="absolute inset-0 bg-blue-500/5 blur-[80px] pointer-events-none z-0" />
-              
+
               {/* Technical Drawing Framer */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
                 className="relative w-full max-w-[240px] aspect-[4/5] rounded-2xl border border-blue-500/20 bg-white/2 p-2 shadow-2xl backdrop-blur-sm overflow-hidden group select-none"
               >
                 {/* Laser scan line anim */}
-                <div 
+                <div
                   className="absolute left-0 right-0 h-[2px] bg-cyan-400/50 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-20 pointer-events-none"
                   style={{
                     animation: "scan 3.5s linear infinite",
                   }}
                 />
-                
+
                 {/* CAD Border Elements */}
-                <div className="absolute top-2 left-2 text-[8px] font-mono text-blue-400/40 font-bold">SCALE: 1:25</div>
-                <div className="absolute bottom-2 right-2 text-[8px] font-mono text-blue-400/40 font-bold">TV-MS-2026</div>
+                <div className="absolute top-2 left-2 text-[8px] font-mono text-blue-400/40 font-bold">
+                  SCALE: 1:25
+                </div>
+                <div className="absolute bottom-2 right-2 text-[8px] font-mono text-blue-400/40 font-bold">
+                  TV-MS-2026
+                </div>
 
                 <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#0A1A30]">
                   <Image
@@ -367,20 +403,26 @@ export default function MeatServicesPage() {
             </div>
 
             {/* Right Column: Sizing Consultation Form (col-span-4) */}
-            <div id="sizing-form-card" className="lg:col-span-4 relative scroll-mt-24">
+            <div
+              id="sizing-form-card"
+              className="lg:col-span-4 relative scroll-mt-24"
+            >
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 opacity-20 blur-lg" />
-              
+
               <div className="relative rounded-2xl border border-white/10 bg-[#0C2340]/80 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
                 <div className="flex items-center gap-2 text-blue-400 mb-2">
                   <Phone className="h-4.5 w-4.5" />
-                  <h3 className="text-base font-extrabold text-white font-display">Sizing Consultation</h3>
+                  <h3 className="text-base font-extrabold text-white font-display">
+                    Sizing Consultation
+                  </h3>
                 </div>
                 <p className="text-xs text-slate-300 mb-6 leading-relaxed">
-                  Need engineering calculations or CAD layout blueprints for this specific utility? Request a call.
+                  Need engineering calculations or CAD layout blueprints for
+                  this specific utility? Request a call.
                 </p>
 
                 {formSent ? (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-6 text-center space-y-4 py-10"
@@ -389,28 +431,41 @@ export default function MeatServicesPage() {
                       <CheckCircle2 className="h-6 w-6" />
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-sm font-bold text-white font-display">Callback Request Received</h4>
+                      <h4 className="text-sm font-bold text-white font-display">
+                        Callback Request Received
+                      </h4>
                       <p className="text-xs text-slate-300 leading-relaxed px-2">
-                        Thanks <strong className="text-white">{name}</strong>. Our cold chain draftsman will contact you within 12–24 hours.
+                        Thanks <strong className="text-white">{name}</strong>.
+                        Our cold chain draftsman will contact you within 12–24
+                        hours.
                       </p>
                     </div>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleCallbackSubmit} className="space-y-4">
                     <div>
-                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">Your Name</label>
+                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">
+                        Your Name
+                      </label>
                       <input
                         type="text"
                         required
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) =>
+                          setPhone(
+                            e.target.value.replace(/\D/g, "").slice(0, 10),
+                          )
+                        }
+                        maxLength={10}
                         placeholder="e.g. Kuldeep"
                         className="w-full rounded-xl bg-slate-950/50 border border-white/10 p-3 text-xs text-white placeholder-white/20 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-body"
                       />
                     </div>
-                    
+
                     <div>
-                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">Mobile Number</label>
+                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">
+                        Mobile Number
+                      </label>
                       <input
                         type="tel"
                         required
@@ -422,7 +477,9 @@ export default function MeatServicesPage() {
                     </div>
 
                     <div>
-                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">Business / Organization</label>
+                      <label className="text-[10px] text-slate-400 font-semibold font-mono uppercase tracking-wider block mb-1">
+                        Business / Organization
+                      </label>
                       <input
                         type="text"
                         value={business}
@@ -460,7 +517,6 @@ export default function MeatServicesPage() {
                 )}
               </div>
             </div>
-            
           </div>
         </div>
       </section>
@@ -472,8 +528,8 @@ export default function MeatServicesPage() {
             {valueProps.map((prop, idx) => {
               const Icon = prop.icon;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`flex flex-col items-start space-y-2.5 ${idx > 0 ? "pt-6 md:pt-0 lg:pl-6" : ""}`}
                 >
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
@@ -504,10 +560,13 @@ export default function MeatServicesPage() {
               DIFFICULTIES IN MEAT COLD CHAIN
             </span>
             <h2 className="text-3xl font-extrabold text-[#0c2340] font-display leading-tight">
-              Common <span className="text-blue-600">Challenges</span> in Meat & Poultry Storage
+              Common <span className="text-blue-600">Challenges</span> in Meat &
+              Poultry Storage
             </h2>
             <p className="text-xs text-slate-500 leading-relaxed font-body">
-              Meat and poultry are subject to rapid spoilage and bacterial contamination. Overcoming these requires extreme thermal rigidity and precise mechanical configurations.
+              Meat and poultry are subject to rapid spoilage and bacterial
+              contamination. Overcoming these requires extreme thermal rigidity
+              and precise mechanical configurations.
             </p>
           </div>
 
@@ -529,12 +588,12 @@ export default function MeatServicesPage() {
                 >
                   {/* Spotlight Glow Effect */}
                   {isHovered && (
-                    <div 
+                    <div
                       className="absolute inset-0 pointer-events-none opacity-40 transition-opacity duration-300 bg-[radial-gradient(250px_circle_at_var(--x)_var(--y),rgba(59,130,246,0.12),transparent_80%)]"
                       style={{
                         // @ts-ignore
                         "--x": `${mouseCoords.x}px`,
-                        "--y": `${mouseCoords.y}px`
+                        "--y": `${mouseCoords.y}px`,
                       }}
                     />
                   )}
@@ -542,7 +601,9 @@ export default function MeatServicesPage() {
                   <div className="space-y-5 z-10">
                     {/* Header: Icon + Code */}
                     <div className="flex items-center justify-between">
-                      <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${chal.color} ${chal.iconColor} border border-white/10 shadow-sm transition-transform duration-300 group-hover:scale-105`}>
+                      <div
+                        className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${chal.color} ${chal.iconColor} border border-white/10 shadow-sm transition-transform duration-300 group-hover:scale-105`}
+                      >
                         <Icon className="h-5 w-5" />
                       </div>
                       <span className="font-mono text-[9px] font-bold text-slate-400 bg-slate-50 border border-slate-100/60 px-2 py-0.5 rounded uppercase tracking-wider">
@@ -563,18 +624,26 @@ export default function MeatServicesPage() {
                     {/* Severity Progress Bar */}
                     <div className="space-y-1.5 pt-2">
                       <div className="flex justify-between text-[9px] font-mono font-bold uppercase tracking-wider">
-                        <span className="text-slate-400">Severity Risk Level</span>
-                        <span className={chal.severity >= 90 ? "text-red-500 animate-pulse" : "text-[#1e3a8a]"}>
+                        <span className="text-slate-400">
+                          Severity Risk Level
+                        </span>
+                        <span
+                          className={
+                            chal.severity >= 90
+                              ? "text-red-500 animate-pulse"
+                              : "text-[#1e3a8a]"
+                          }
+                        >
                           {chal.severityLabel}
                         </span>
                       </div>
                       <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div 
+                        <div
                           className={`h-full rounded-full transition-all duration-500 ${
-                            chal.severity >= 90 
-                              ? "bg-red-500" 
-                              : chal.severity >= 80 
-                                ? "bg-amber-500" 
+                            chal.severity >= 90
+                              ? "bg-red-500"
+                              : chal.severity >= 80
+                                ? "bg-amber-500"
                                 : "bg-blue-500"
                           }`}
                           style={{ width: `${chal.severity}%` }}
@@ -611,10 +680,14 @@ export default function MeatServicesPage() {
               OUR ENGINEERING
             </span>
             <h2 className="text-3xl font-extrabold font-display leading-tight">
-              Our Cold Storage <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Solutions</span>
+              Our Cold Storage{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                Solutions
+              </span>
             </h2>
             <p className="text-xs text-slate-300 leading-relaxed font-body">
-              How ThermoVault delivers elite technical stability and extreme performance for critical meat processing operations.
+              How ThermoVault delivers elite technical stability and extreme
+              performance for critical meat processing operations.
             </p>
           </div>
 
@@ -627,9 +700,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <Grid className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">Modular Cold Rooms</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  Modular Cold Rooms
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  Custom-built cold rooms for chilled & frozen meat, poultry and processed products.
+                  Custom-built cold rooms for chilled & frozen meat, poultry and
+                  processed products.
                 </p>
               </div>
 
@@ -638,9 +714,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <Snowflake className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">Blast Freezing Solutions</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  Blast Freezing Solutions
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  Quickly freeze products to lock nutrition, flavor and freshness for longer.
+                  Quickly freeze products to lock nutrition, flavor and
+                  freshness for longer.
                 </p>
               </div>
 
@@ -649,9 +728,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <ShieldCheck className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">Hygienic SS Interiors</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  Hygienic SS Interiors
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  SS 304 food-grade interiors for easy cleaning and maximum hygiene.
+                  SS 304 food-grade interiors for easy cleaning and maximum
+                  hygiene.
                 </p>
               </div>
             </div>
@@ -659,8 +741,8 @@ export default function MeatServicesPage() {
             {/* Center Image */}
             <div className="lg:col-span-4 flex justify-center relative py-6">
               <div className="absolute inset-0 m-auto w-64 sm:w-80 h-64 sm:h-80 rounded-full border border-blue-500/10 shadow-neon-blue animate-pulse" />
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -684,9 +766,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <Network className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">IoT Monitoring & Alerts</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  IoT Monitoring & Alerts
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  Real-time temperature & humidity monitoring with instant alerts on any deviation.
+                  Real-time temperature & humidity monitoring with instant
+                  alerts on any deviation.
                 </p>
               </div>
 
@@ -695,9 +780,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <Zap className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">Energy Efficient Systems</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  Energy Efficient Systems
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  High-efficiency refrigeration systems to reduce power consumption and operational costs.
+                  High-efficiency refrigeration systems to reduce power
+                  consumption and operational costs.
                 </p>
               </div>
 
@@ -706,9 +794,12 @@ export default function MeatServicesPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <Battery className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-sm font-bold text-white font-display">Backup Power & Safety</h4>
+                <h4 className="text-sm font-bold text-white font-display">
+                  Backup Power & Safety
+                </h4>
                 <p className="text-xs text-slate-300 leading-relaxed font-body">
-                  Redundant systems and safety features to ensure uninterrupted cold storage.
+                  Redundant systems and safety features to ensure uninterrupted
+                  cold storage.
                 </p>
               </div>
             </div>
@@ -720,7 +811,6 @@ export default function MeatServicesPage() {
       <section className="py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
             {/* Left Side: Storage Temp Guide Table */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
@@ -737,12 +827,17 @@ export default function MeatServicesPage() {
                   <thead>
                     <tr className="bg-slate-50 border-b border-slate-100 text-slate-400 font-mono uppercase tracking-wider text-[10px]">
                       <th className="p-4 pl-6 font-bold">Product Type</th>
-                      <th className="p-4 pr-6 font-bold text-right">Ideal Storage Temp</th>
+                      <th className="p-4 pr-6 font-bold text-right">
+                        Ideal Storage Temp
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 font-body text-slate-700">
                     {tempGuide.map((item, index) => (
-                      <tr key={index} className="hover:bg-slate-50/50 transition-colors font-medium">
+                      <tr
+                        key={index}
+                        className="hover:bg-slate-50/50 transition-colors font-medium"
+                      >
                         <td className="p-4 pl-6 flex items-center gap-3">
                           <div className="h-6 w-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
                             <Droplet className="h-3 w-3" />
@@ -770,8 +865,8 @@ export default function MeatServicesPage() {
                     Proposed Meat &amp; Poultry Cold Storage Concepts
                   </h3>
                 </div>
-                <Link 
-                  href="/projects" 
+                <Link
+                  href="/projects"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-500 transition-colors uppercase tracking-wider font-mono shrink-0 mb-1"
                 >
                   <span>View All Projects</span>
@@ -782,7 +877,7 @@ export default function MeatServicesPage() {
               {/* 4-Image Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {installations.map((inst, index) => (
-                  <Link 
+                  <Link
                     key={index}
                     href="/projects"
                     className="group rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col cursor-pointer"
@@ -811,23 +906,38 @@ export default function MeatServicesPage() {
               {/* Counter badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-100 text-center font-mono">
                 <div className="space-y-1">
-                  <div className="text-lg font-extrabold text-[#0c2340] font-display">Shock Freezing</div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Cell-Level Lock</div>
+                  <div className="text-lg font-extrabold text-[#0c2340] font-display">
+                    Shock Freezing
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    Cell-Level Lock
+                  </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-lg font-extrabold text-[#0c2340] font-display">SS-304</div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Hygienic Finish</div>
+                  <div className="text-lg font-extrabold text-[#0c2340] font-display">
+                    SS-304
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    Hygienic Finish
+                  </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-lg font-extrabold text-[#0c2340] font-display">-40°C</div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Max Blast Speed</div>
+                  <div className="text-lg font-extrabold text-[#0c2340] font-display">
+                    -40°C
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    Max Blast Speed
+                  </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-lg font-extrabold text-[#0c2340] font-display">24/7</div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Critical Response</div>
+                  <div className="text-lg font-extrabold text-[#0c2340] font-display">
+                    24/7
+                  </div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    Critical Response
+                  </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -849,7 +959,7 @@ export default function MeatServicesPage() {
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div 
+                <div
                   key={idx}
                   className="rounded-2xl border border-slate-100 bg-white shadow-sm overflow-hidden transition-all duration-300"
                 >
@@ -860,7 +970,9 @@ export default function MeatServicesPage() {
                     <span className="text-xs sm:text-sm font-bold text-[#0c2340] font-display transition-colors hover:text-blue-600">
                       {faq.q}
                     </span>
-                    <ChevronDown className={`h-4 w-4 text-blue-600 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 text-blue-600 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -890,15 +1002,16 @@ export default function MeatServicesPage() {
         <div className="absolute bottom-0 right-0 w-[400px] h-[200px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
-          
           <div className="rounded-2xl border border-white/10 bg-[#0A1A30]/60 p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-sm">
             <div className="space-y-3 text-center md:text-left">
               <h3 className="text-2xl font-extrabold font-display">
-                Build a Strong Cold Chain for <br className="hidden sm:inline" />
+                Build a Strong Cold Chain for{" "}
+                <br className="hidden sm:inline" />
                 Meat & Poultry
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl font-body leading-relaxed">
-                Talk to our experts for custom cold storage solutions designed for your business.
+                Talk to our experts for custom cold storage solutions designed
+                for your business.
               </p>
             </div>
 
@@ -945,7 +1058,6 @@ export default function MeatServicesPage() {
               <span>Built for Performance</span>
             </div>
           </div>
-
         </div>
       </section>
 

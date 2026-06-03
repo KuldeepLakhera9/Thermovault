@@ -65,25 +65,30 @@ export default function SubsidyPage() {
     if (form.areaType === "Urban") {
       percentage = "15%";
       scheme = "PMEGP / PMFME Urban Subsidy Support";
-      desc = "Standard urban area capital subsidy under self-employment incentives.";
+      desc =
+        "Standard urban area capital subsidy under self-employment incentives.";
     } else if (form.areaType === "Suburban") {
       percentage = "16% - 34%";
       scheme = "PMKSY / MIDH Semi-Urban Cold Chain Support";
-      desc = "Semi-urban cold chain creation and preservation infrastructure support.";
+      desc =
+        "Semi-urban cold chain creation and preservation infrastructure support.";
     } else {
       // Rural
       if (form.bizType === "Farmer / FPO") {
         percentage = "50%";
         scheme = "NHB (National Horticulture Board)";
-        desc = "Special cooperative category subsidy matching farming producer groups in rural areas.";
+        desc =
+          "Special cooperative category subsidy matching farming producer groups in rural areas.";
       } else if (form.state === "Himachal Pradesh") {
         percentage = "50%";
         scheme = "MIDH Hilly State Scheme";
-        desc = "Hilly state elevation rural capital grant for cold chain components.";
+        desc =
+          "Hilly state elevation rural capital grant for cold chain components.";
       } else {
         percentage = "35% - 50%";
         scheme = "NHB / MIDH Rural Cold Chain Support";
-        desc = "Standard credit-linked rural back-ended capital grant matching cold rooms.";
+        desc =
+          "Standard credit-linked rural back-ended capital grant matching cold rooms.";
       }
     }
 
@@ -371,8 +376,14 @@ export default function SubsidyPage() {
                           placeholder="Mobile Number"
                           value={form.phone}
                           onChange={(e) =>
-                            setForm({ ...form, phone: e.target.value })
+                            setForm({
+                              ...form,
+                              phone: e.target.value
+                                .replace(/\D/g, "")
+                                .slice(0, 10),
+                            })
                           }
+                          maxLength={10}
                           className="rounded-lg bg-slate-50 border border-slate-200 p-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white"
                         />
                       </div>

@@ -309,9 +309,16 @@ const serviceDb: Record<string, ServiceDetail> = {
 };
 
 const relatedMap: Record<string, string[]> = {
-  "modular-cold-rooms": ["refrigeration-systems", "mushroom-saffron-cultivation", "amc"],
+  "modular-cold-rooms": [
+    "refrigeration-systems",
+    "mushroom-saffron-cultivation",
+    "amc",
+  ],
   "refrigeration-systems": ["blast-chillers", "amc", "consultation"],
-  "mushroom-saffron-cultivation": ["modular-cold-rooms", "refrigeration-systems"],
+  "mushroom-saffron-cultivation": [
+    "modular-cold-rooms",
+    "refrigeration-systems",
+  ],
   "clean-rooms": ["consultation", "amc"],
   "ripening-chambers": ["consultation", "amc"],
   "blast-chillers": ["refrigeration-systems", "amc"],
@@ -637,7 +644,11 @@ function getTechnicalParameters(slug: string): TechnicalParameter[] {
       { label: "Operating Temp Range", value: "12 - 28", metric: "°C" },
       { label: "CO2 Setpoint Accuracy", value: "±50", metric: "ppm" },
       { label: "HEPA Air Exchange Rate", value: "20 - 35", metric: "ACH" },
-      { label: "LED Grow Light Peak", value: "450 & 660", metric: "nm (Grow Light)" },
+      {
+        label: "LED Grow Light Peak",
+        value: "450 & 660",
+        metric: "nm (Grow Light)",
+      },
     ],
     "clean-rooms": [
       {
@@ -1678,16 +1689,56 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
             <rect width="100%" height="100%" fill="url(#grid)" />
 
             {/* Ceiling HEPA Ventilation Duct */}
-            <rect x="25" y="15" width="150" height="10" rx="1" fill="#0C2340" stroke="#3b82f6" strokeWidth="0.75" />
-            <text x="100" y="22" fill="#3b82f6" fontSize="4.5" fontFamily="monospace" textAnchor="middle">
+            <rect
+              x="25"
+              y="15"
+              width="150"
+              height="10"
+              rx="1"
+              fill="#0C2340"
+              stroke="#3b82f6"
+              strokeWidth="0.75"
+            />
+            <text
+              x="100"
+              y="22"
+              fill="#3b82f6"
+              fontSize="4.5"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
               CENTRAL HEPA VENTILATION DUCT
             </text>
 
             {/* Multi-tier Grow Shelves */}
             {/* Shelf Left */}
-            <rect x="20" y="45" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
-            <rect x="20" y="85" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
-            <rect x="20" y="125" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
+            <rect
+              x="20"
+              y="45"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
+            <rect
+              x="20"
+              y="85"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
+            <rect
+              x="20"
+              y="125"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
 
             {/* Mushrooms growing on left shelves */}
             <circle cx="28" cy="40" r="2.5" fill="#f1f5f9" />
@@ -1696,32 +1747,124 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
             <path d="M 45 42 L 45 45" stroke="#f1f5f9" strokeWidth="1" />
             <circle cx="65" cy="40" r="2.5" fill="#f1f5f9" />
             <path d="M 65 42 L 65 45" stroke="#f1f5f9" strokeWidth="1" />
-            
+
             {/* Saffron growing on right shelves */}
-            <rect x="115" y="45" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
-            <rect x="115" y="85" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
-            <rect x="115" y="125" width="65" height="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
-            
+            <rect
+              x="115"
+              y="45"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
+            <rect
+              x="115"
+              y="85"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
+            <rect
+              x="115"
+              y="125"
+              width="65"
+              height="4"
+              fill="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth="0.5"
+            />
+
             {/* Purple flowers with red stigma on right shelves */}
             <path d="M 125 40 L 128 35 L 131 40 Z" fill="#c084fc" />
-            <line x1="128" y1="35" x2="128" y2="39" stroke="#ef4444" strokeWidth="0.5" />
+            <line
+              x1="128"
+              y1="35"
+              x2="128"
+              y2="39"
+              stroke="#ef4444"
+              strokeWidth="0.5"
+            />
             <path d="M 151 40 L 154 35 L 157 40 Z" fill="#c084fc" />
-            <line x1="154" y1="35" x2="154" y2="39" stroke="#ef4444" strokeWidth="0.5" />
+            <line
+              x1="154"
+              y1="35"
+              x2="154"
+              y2="39"
+              stroke="#ef4444"
+              strokeWidth="0.5"
+            />
             <path d="M 165 40 L 168 35 L 171 40 Z" fill="#c084fc" />
-            <line x1="168" y1="35" x2="168" y2="39" stroke="#ef4444" strokeWidth="0.5" />
+            <line
+              x1="168"
+              y1="35"
+              x2="168"
+              y2="39"
+              stroke="#ef4444"
+              strokeWidth="0.5"
+            />
 
             {/* Dynamic Airflow Loops */}
-            <path className="air-flow" d="M 50 25 L 50 135" fill="none" stroke="#22d3ee" strokeWidth="0.75" />
-            <path className="air-flow" d="M 150 25 L 150 135" fill="none" stroke="#c084fc" strokeWidth="0.75" />
-            <path className="air-flow" d="M 100 25 L 100 135" fill="none" stroke="#3b82f6" strokeWidth="0.75" />
+            <path
+              className="air-flow"
+              d="M 50 25 L 50 135"
+              fill="none"
+              stroke="#22d3ee"
+              strokeWidth="0.75"
+            />
+            <path
+              className="air-flow"
+              d="M 150 25 L 150 135"
+              fill="none"
+              stroke="#c084fc"
+              strokeWidth="0.75"
+            />
+            <path
+              className="air-flow"
+              d="M 100 25 L 100 135"
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="0.75"
+            />
 
             {/* Horizontal convection cycles */}
-            <path className="air-flow" d="M 20 65 Q 100 55 180 65" fill="none" stroke="rgba(34,211,238,0.3)" strokeWidth="0.5" />
-            <path className="air-flow" d="M 180 105 Q 100 115 20 105" fill="none" stroke="rgba(34,211,238,0.3)" strokeWidth="0.5" />
+            <path
+              className="air-flow"
+              d="M 20 65 Q 100 55 180 65"
+              fill="none"
+              stroke="rgba(34,211,238,0.3)"
+              strokeWidth="0.5"
+            />
+            <path
+              className="air-flow"
+              d="M 180 105 Q 100 115 20 105"
+              fill="none"
+              stroke="rgba(34,211,238,0.3)"
+              strokeWidth="0.5"
+            />
 
             {/* Labels */}
-            <text x="52" y="142" fill="#22d3ee" fontSize="3.5" fontFamily="monospace">MUSHROOM BEDS (HIGH CO2)</text>
-            <text x="148" y="142" fill="#c084fc" fontSize="3.5" fontFamily="monospace" textAnchor="end">SAFFRON SHELVES (GROW LIGHTS)</text>
+            <text
+              x="52"
+              y="142"
+              fill="#22d3ee"
+              fontSize="3.5"
+              fontFamily="monospace"
+            >
+              MUSHROOM BEDS (HIGH CO2)
+            </text>
+            <text
+              x="148"
+              y="142"
+              fill="#c084fc"
+              fontSize="3.5"
+              fontFamily="monospace"
+              textAnchor="end"
+            >
+              SAFFRON SHELVES (GROW LIGHTS)
+            </text>
           </svg>
         );
       }
@@ -1735,47 +1878,223 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
             <rect width="100%" height="100%" fill="url(#grid)" />
 
             {/* Automation controller interface */}
-            <rect x="15" y="15" width="170" height="120" rx="4" fill="#0C2340" stroke="#3b82f6" strokeWidth="1.5" />
+            <rect
+              x="15"
+              y="15"
+              width="170"
+              height="120"
+              rx="4"
+              fill="#0C2340"
+              stroke="#3b82f6"
+              strokeWidth="1.5"
+            />
             <rect x="20" y="20" width="160" height="18" rx="2" fill="#030F26" />
-            
-            <text x="100" y="32" fill="#3b82f6" fontSize="6" fontFamily="monospace" fontWeight="bold" textAnchor="middle">
+
+            <text
+              x="100"
+              y="32"
+              fill="#3b82f6"
+              fontSize="6"
+              fontFamily="monospace"
+              fontWeight="bold"
+              textAnchor="middle"
+            >
               THERMOPLC CULTIVATION ENGINE v4.2
             </text>
             <circle cx="28" cy="29" r="2.5" fill="#10b981" />
-            <text x="34" y="31" fill="#10b981" fontSize="4.5" fontFamily="monospace">ACTIVE</text>
+            <text
+              x="34"
+              y="31"
+              fill="#10b981"
+              fontSize="4.5"
+              fontFamily="monospace"
+            >
+              ACTIVE
+            </text>
 
             {/* 3 Readout Cards */}
             {/* Card 1: Temp */}
-            <rect x="25" y="45" width="45" height="35" rx="2" fill="#030F26" stroke="rgba(59,130,246,0.15)" />
-            <text x="47.5" y="55" fill="#94a3b8" fontSize="4" fontFamily="monospace" textAnchor="middle">TEMPERATURE</text>
-            <text x="47.5" y="70" fill="#22d3ee" fontSize="10" fontFamily="sans-serif" fontWeight="bold" textAnchor="middle">21.5°C</text>
-            <text x="47.5" y="76" fill="#10b981" fontSize="3" fontFamily="monospace" textAnchor="middle">TARGET: 18.0°C</text>
+            <rect
+              x="25"
+              y="45"
+              width="45"
+              height="35"
+              rx="2"
+              fill="#030F26"
+              stroke="rgba(59,130,246,0.15)"
+            />
+            <text
+              x="47.5"
+              y="55"
+              fill="#94a3b8"
+              fontSize="4"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
+              TEMPERATURE
+            </text>
+            <text
+              x="47.5"
+              y="70"
+              fill="#22d3ee"
+              fontSize="10"
+              fontFamily="sans-serif"
+              fontWeight="bold"
+              textAnchor="middle"
+            >
+              21.5°C
+            </text>
+            <text
+              x="47.5"
+              y="76"
+              fill="#10b981"
+              fontSize="3"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
+              TARGET: 18.0°C
+            </text>
 
             {/* Card 2: Humid */}
-            <rect x="77.5" y="45" width="45" height="35" rx="2" fill="#030F26" stroke="rgba(59,130,246,0.15)" />
-            <text x="100" y="55" fill="#94a3b8" fontSize="4" fontFamily="monospace" textAnchor="middle">REL. HUMIDITY</text>
-            <text x="100" y="70" fill="#3b82f6" fontSize="10" fontFamily="sans-serif" fontWeight="bold" textAnchor="middle">
+            <rect
+              x="77.5"
+              y="45"
+              width="45"
+              height="35"
+              rx="2"
+              fill="#030F26"
+              stroke="rgba(59,130,246,0.15)"
+            />
+            <text
+              x="100"
+              y="55"
+              fill="#94a3b8"
+              fontSize="4"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
+              REL. HUMIDITY
+            </text>
+            <text
+              x="100"
+              y="70"
+              fill="#3b82f6"
+              fontSize="10"
+              fontFamily="sans-serif"
+              fontWeight="bold"
+              textAnchor="middle"
+            >
               {heaterOn ? "82.5%" : "42.0%"}
             </text>
-            <text x="100" y="76" fill={heaterOn ? "#10b981" : "#ef4444"} fontSize="3" fontFamily="monospace" textAnchor="middle">
+            <text
+              x="100"
+              y="76"
+              fill={heaterOn ? "#10b981" : "#ef4444"}
+              fontSize="3"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
               {heaterOn ? "HUMIDIFIER: ON" : "HUMIDIFIER: OFF"}
             </text>
 
             {/* Card 3: CO2 */}
-            <rect x="130" y="45" width="45" height="35" rx="2" fill="#030F26" stroke="rgba(59,130,246,0.15)" />
-            <text x="152.5" y="55" fill="#94a3b8" fontSize="4" fontFamily="monospace" textAnchor="middle">CO2 LEVELS</text>
-            <text x="152.5" y="70" fill="#f59e0b" fontSize="9" fontFamily="sans-serif" fontWeight="bold" textAnchor="middle">840 PPM</text>
-            <text x="152.5" y="76" fill="#10b981" fontSize="3" fontFamily="monospace" textAnchor="middle">DAMPER: CLOSED</text>
+            <rect
+              x="130"
+              y="45"
+              width="45"
+              height="35"
+              rx="2"
+              fill="#030F26"
+              stroke="rgba(59,130,246,0.15)"
+            />
+            <text
+              x="152.5"
+              y="55"
+              fill="#94a3b8"
+              fontSize="4"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
+              CO2 LEVELS
+            </text>
+            <text
+              x="152.5"
+              y="70"
+              fill="#f59e0b"
+              fontSize="9"
+              fontFamily="sans-serif"
+              fontWeight="bold"
+              textAnchor="middle"
+            >
+              840 PPM
+            </text>
+            <text
+              x="152.5"
+              y="76"
+              fill="#10b981"
+              fontSize="3"
+              fontFamily="monospace"
+              textAnchor="middle"
+            >
+              DAMPER: CLOSED
+            </text>
 
             {/* Dynamic Saffron LED Schedule Status */}
-            <rect x="25" y="90" width="150" height="32" rx="2" fill="#030F26" stroke="rgba(192,132,252,0.15)" />
-            <text x="35" y="102" fill="#c084fc" fontSize="4.5" fontFamily="monospace" fontWeight="bold">GROW LIGHT SYSTEM</text>
-            <text x="35" y="112" fill="#94a3b8" fontSize="4" fontFamily="monospace">LED Dimmer Level: {ledIntensity}%</text>
+            <rect
+              x="25"
+              y="90"
+              width="150"
+              height="32"
+              rx="2"
+              fill="#030F26"
+              stroke="rgba(192,132,252,0.15)"
+            />
+            <text
+              x="35"
+              y="102"
+              fill="#c084fc"
+              fontSize="4.5"
+              fontFamily="monospace"
+              fontWeight="bold"
+            >
+              GROW LIGHT SYSTEM
+            </text>
+            <text
+              x="35"
+              y="112"
+              fill="#94a3b8"
+              fontSize="4"
+              fontFamily="monospace"
+            >
+              LED Dimmer Level: {ledIntensity}%
+            </text>
             <rect x="95" y="107" width="70" height="6" rx="1" fill="#1e1b4b" />
-            <rect x="95" y="107" width={`${ledIntensity * 0.7}`} height="6" rx="1" fill="#c084fc" />
+            <rect
+              x="95"
+              y="107"
+              width={`${ledIntensity * 0.7}`}
+              height="6"
+              rx="1"
+              fill="#c084fc"
+            />
 
-            <circle cx="162" cy="99" r="2" fill="#10b981" className="animate-pulse" />
-            <text x="155" y="100.5" fill="#10b981" fontSize="3" fontFamily="monospace" textAnchor="end">AUTO SPECTRUM PEAK</text>
+            <circle
+              cx="162"
+              cy="99"
+              r="2"
+              fill="#10b981"
+              className="animate-pulse"
+            />
+            <text
+              x="155"
+              y="100.5"
+              fill="#10b981"
+              fontSize="3"
+              fontFamily="monospace"
+              textAnchor="end"
+            >
+              AUTO SPECTRUM PEAK
+            </text>
           </svg>
         );
       }
@@ -1789,13 +2108,51 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
             <rect width="100%" height="100%" fill="url(#grid)" />
 
             {/* Real-time Telemetry Graph */}
-            <rect x="15" y="15" width="170" height="95" rx="3" fill="#051430" stroke="rgba(34,211,238,0.1)" />
-            <text x="25" y="27" fill="#22d3ee" fontSize="5" fontFamily="monospace" fontWeight="bold">REAL-TIME MICRO-CLIMATE TELEMETRY</text>
-            
+            <rect
+              x="15"
+              y="15"
+              width="170"
+              height="95"
+              rx="3"
+              fill="#051430"
+              stroke="rgba(34,211,238,0.1)"
+            />
+            <text
+              x="25"
+              y="27"
+              fill="#22d3ee"
+              fontSize="5"
+              fontFamily="monospace"
+              fontWeight="bold"
+            >
+              REAL-TIME MICRO-CLIMATE TELEMETRY
+            </text>
+
             {/* Gridlines */}
-            <line x1="20" y1="50" x2="180" y2="50" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
-            <line x1="20" y1="75" x2="180" y2="75" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
-            <line x1="20" y1="100" x2="180" y2="100" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
+            <line
+              x1="20"
+              y1="50"
+              x2="180"
+              y2="50"
+              stroke="rgba(255,255,255,0.05)"
+              strokeWidth="0.5"
+            />
+            <line
+              x1="20"
+              y1="75"
+              x2="180"
+              y2="75"
+              stroke="rgba(255,255,255,0.05)"
+              strokeWidth="0.5"
+            />
+            <line
+              x1="20"
+              y1="100"
+              x2="180"
+              y2="100"
+              stroke="rgba(255,255,255,0.05)"
+              strokeWidth="0.5"
+            />
 
             {/* Graph Paths */}
             {/* Humidity Line */}
@@ -1816,15 +2173,64 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
 
             {/* Sensor Tags */}
             <circle cx="60" cy="70" r="2.5" fill="#3b82f6" />
-            <text x="65" y="68" fill="#3b82f6" fontSize="4.5" fontFamily="monospace">82.5% RH</text>
+            <text
+              x="65"
+              y="68"
+              fill="#3b82f6"
+              fontSize="4.5"
+              fontFamily="monospace"
+            >
+              82.5% RH
+            </text>
             <circle cx="140" cy="70" r="2.5" fill="#f59e0b" />
-            <text x="145" y="68" fill="#f59e0b" fontSize="4.5" fontFamily="monospace">840 PPM CO2</text>
+            <text
+              x="145"
+              y="68"
+              fill="#f59e0b"
+              fontSize="4.5"
+              fontFamily="monospace"
+            >
+              840 PPM CO2
+            </text>
 
             {/* Bottom Telemetry Details */}
-            <rect x="15" y="118" width="170" height="20" rx="2" fill="#0C2340" stroke="rgba(59,130,246,0.1)" />
-            <text x="25" y="130.5" fill="#94a3b8" fontSize="4" fontFamily="monospace">GATEWAY: ONLINE</text>
-            <text x="90" y="130.5" fill="#10b981" fontSize="4" fontFamily="monospace">TELEMETRY PRESETS: MIDH & NHB CERTIFIED</text>
-            <text x="175" y="130.5" fill="#22d3ee" fontSize="4" fontFamily="monospace" textAnchor="end">ALERTS: ACTIVE</text>
+            <rect
+              x="15"
+              y="118"
+              width="170"
+              height="20"
+              rx="2"
+              fill="#0C2340"
+              stroke="rgba(59,130,246,0.1)"
+            />
+            <text
+              x="25"
+              y="130.5"
+              fill="#94a3b8"
+              fontSize="4"
+              fontFamily="monospace"
+            >
+              GATEWAY: ONLINE
+            </text>
+            <text
+              x="90"
+              y="130.5"
+              fill="#10b981"
+              fontSize="4"
+              fontFamily="monospace"
+            >
+              TELEMETRY PRESETS: MIDH & NHB CERTIFIED
+            </text>
+            <text
+              x="175"
+              y="130.5"
+              fill="#22d3ee"
+              fontSize="4"
+              fontFamily="monospace"
+              textAnchor="end"
+            >
+              ALERTS: ACTIVE
+            </text>
           </svg>
         );
       }
@@ -3095,38 +3501,44 @@ function SystemVisuals({ slug, serviceTitle }: SystemVisualsProps) {
             )}
 
             {/* Controls for mushroom-saffron-cultivation */}
-            {slug === "mushroom-saffron-cultivation" && activeTab === "panel" && (
-              <div className="space-y-3">
-                <div className="space-y-1">
-                  <label className="text-[8px] text-slate-400 font-mono uppercase block">
-                    Grow LED Light Dimmer ({ledIntensity}%)
-                  </label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={ledIntensity}
-                    onChange={(e) => setLedIntensity(parseInt(e.target.value))}
-                    className="w-full accent-purple-500"
-                  />
+            {slug === "mushroom-saffron-cultivation" &&
+              activeTab === "panel" && (
+                <div className="space-y-3">
+                  <div className="space-y-1">
+                    <label className="text-[8px] text-slate-400 font-mono uppercase block">
+                      Grow LED Light Dimmer ({ledIntensity}%)
+                    </label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={ledIntensity}
+                      onChange={(e) =>
+                        setLedIntensity(parseInt(e.target.value))
+                      }
+                      className="w-full accent-purple-500"
+                    />
+                  </div>
+                  <button
+                    onClick={() => setHeaterOn(!heaterOn)}
+                    className={`w-full py-2.5 text-[8.5px] font-bold rounded border transition-all flex items-center justify-center gap-1.5 ${
+                      heaterOn
+                        ? "bg-blue-500/20 border-blue-500 text-blue-300"
+                        : "bg-transparent border-white/5 text-slate-500 hover:border-white/10"
+                    }`}
+                  >
+                    <span>
+                      {heaterOn
+                        ? "Disable Humidifier (RH)"
+                        : "Enable Humidifier (RH)"}
+                    </span>
+                  </button>
+                  <div className="text-[7px] text-slate-500 leading-normal">
+                    Turn the ultrasonic humidifier off to simulate drop in
+                    cultivation micro-climate relative humidity.
+                  </div>
                 </div>
-                <button
-                  onClick={() => setHeaterOn(!heaterOn)}
-                  className={`w-full py-2.5 text-[8.5px] font-bold rounded border transition-all flex items-center justify-center gap-1.5 ${
-                    heaterOn
-                      ? "bg-blue-500/20 border-blue-500 text-blue-300"
-                      : "bg-transparent border-white/5 text-slate-500 hover:border-white/10"
-                  }`}
-                >
-                  <span>
-                    {heaterOn ? "Disable Humidifier (RH)" : "Enable Humidifier (RH)"}
-                  </span>
-                </button>
-                <div className="text-[7px] text-slate-500 leading-normal">
-                  Turn the ultrasonic humidifier off to simulate drop in cultivation micro-climate relative humidity.
-                </div>
-              </div>
-            )}
+              )}
 
             {/* Fallback description */}
             {((slug !== "modular-cold-rooms" &&
@@ -4578,7 +4990,10 @@ export default function ServiceDetailPage({
                       type="tel"
                       required
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) =>
+                        setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))
+                      }
+                      maxLength={10}
                       placeholder="e.g. +91 80550 10620"
                       className="w-full rounded-xl bg-slate-950/50 border border-white/10 p-3 text-xs text-white placeholder-white/20 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition-all font-mono"
                     />

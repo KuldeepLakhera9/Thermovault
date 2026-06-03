@@ -160,7 +160,7 @@ export default function CareersPage() {
         email: "",
         phone: "",
         position: "Thermal Sizing Engineer (HVAC/R)",
-          resumeFile: null,
+        resumeFile: null,
         coverNote: "",
       });
     }, 1200);
@@ -519,8 +519,12 @@ export default function CareersPage() {
                       required
                       value={formData.phone}
                       onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
+                        setFormData({
+                          ...formData,
+                          phone: e.target.value.replace(/\D/g, "").slice(0, 10),
+                        })
                       }
+                      maxLength={10}
                       placeholder="e.g. +91 98765 43210"
                       className="w-full rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all shadow-inner focus:shadow-none"
                     />
@@ -575,7 +579,10 @@ export default function CareersPage() {
                     required
                     accept=".pdf,.doc,.docx"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      const file = e.target.files && e.target.files[0] ? e.target.files[0] : null;
+                      const file =
+                        e.target.files && e.target.files[0]
+                          ? e.target.files[0]
+                          : null;
                       setFormData({ ...formData, resumeFile: file });
                     }}
                     className="w-full rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all shadow-inner focus:shadow-none"

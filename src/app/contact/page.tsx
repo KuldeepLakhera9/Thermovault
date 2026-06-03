@@ -112,9 +112,7 @@ export default function ContactPage() {
               <div className="space-y-4 text-xs sm:text-sm text-slate-600">
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>
-                      At post Kadadhe Colony Rajgurunagar, Pune
-                  </span>
+                  <span>At post Kadadhe Colony Rajgurunagar, Pune</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-blue-600 shrink-0" />
@@ -213,8 +211,14 @@ export default function ContactPage() {
                         required
                         value={formData.phone}
                         onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
+                          setFormData({
+                            ...formData,
+                            phone: e.target.value
+                              .replace(/\D/g, "")
+                              .slice(0, 10),
+                          })
                         }
+                        maxLength={10}
                         placeholder="e.g. +91 80550 10620"
                         className="w-full rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                       />

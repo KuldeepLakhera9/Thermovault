@@ -32,43 +32,86 @@ export default function ProjectTracker() {
       title: "Free Consultation",
       date: "Oct 12, 2025",
       status: "completed",
-      description: "Requirements analysis, capacity estimates, and thermal sizing calculation.",
+      description:
+        "Requirements analysis, capacity estimates, and thermal sizing calculation.",
     },
     {
       title: "Site Assessment & Design",
       date: "Nov 05, 2025",
       status: "completed",
-      description: "CAD layout drafting, civil check, and 120mm PUF panel thickness specifications map.",
+      description:
+        "CAD layout drafting, civil check, and 120mm PUF panel thickness specifications map.",
     },
     {
       title: "Manufacturing & Installation",
       date: "In Progress",
       status: "current",
-      description: "Assembly of Copeland Scroll compressor, piping leak checks, and wall panel joints rigging.",
+      description:
+        "Assembly of Copeland Scroll compressor, piping leak checks, and wall panel joints rigging.",
     },
     {
       title: "Testing & Handover",
       date: "Est. Dec 15, 2025",
       status: "upcoming",
-      description: "Pull-down test, electric defrost testing, IoT controller calibration, and handover.",
+      description:
+        "Pull-down test, electric defrost testing, IoT controller calibration, and handover.",
     },
   ];
 
   const specs = [
-    { label: "Dimensions", value: "24' x 16' x 10' (Length x Width x Height in feet)" },
-    { label: "Insulation", value: "120mm PUF Panels (Density: 40 kg/m³, Thermal Cond: 0.022 W/mK)" },
-    { label: "Compressor", value: "Copeland Scroll Compressor (7.5 TR Capacity | Refrigerant: R404A)" },
-    { label: "Evaporator", value: "Forced Air Gravity Evaporator with integrated electric heater strip" },
-    { label: "Control Panel", value: "Carel Digital Controller with IoT Gateway & temperature alerts" },
-    { label: "Access Door", value: "1000mm x 2000mm Insulated Sliding Door with magnetic seal" },
-    { label: "Target Range", value: "-25°C to -15°C (Optimized for Deep Freeze Storage)" },
+    {
+      label: "Dimensions",
+      value: "24' x 16' x 10' (Length x Width x Height in feet)",
+    },
+    {
+      label: "Insulation",
+      value: "120mm PUF Panels (Density: 40 kg/m³, Thermal Cond: 0.022 W/mK)",
+    },
+    {
+      label: "Compressor",
+      value:
+        "Copeland Scroll Compressor (7.5 TR Capacity | Refrigerant: R404A)",
+    },
+    {
+      label: "Evaporator",
+      value:
+        "Forced Air Gravity Evaporator with integrated electric heater strip",
+    },
+    {
+      label: "Control Panel",
+      value: "Carel Digital Controller with IoT Gateway & temperature alerts",
+    },
+    {
+      label: "Access Door",
+      value: "1000mm x 2000mm Insulated Sliding Door with magnetic seal",
+    },
+    {
+      label: "Target Range",
+      value: "-25°C to -15°C (Optimized for Deep Freeze Storage)",
+    },
   ];
 
   const documents = [
-    { name: "ThermoVault_Project_Quotation.pdf", size: "1.4 MB", date: "Oct 15, 2025" },
-    { name: "CAD_Engineering_Layout_Drawing.pdf", size: "4.8 MB", date: "Nov 02, 2025" },
-    { name: "Subsidy_Eligibility_Report_NABARD.pdf", size: "850 KB", date: "Nov 07, 2025" },
-    { name: "PUF_Panel_Quality_Certificate.pdf", size: "2.1 MB", date: "Nov 12, 2025" },
+    {
+      name: "ThermoVault_Project_Quotation.pdf",
+      size: "1.4 MB",
+      date: "Oct 15, 2025",
+    },
+    {
+      name: "CAD_Engineering_Layout_Drawing.pdf",
+      size: "4.8 MB",
+      date: "Nov 02, 2025",
+    },
+    {
+      name: "Subsidy_Eligibility_Report_NABARD.pdf",
+      size: "850 KB",
+      date: "Nov 07, 2025",
+    },
+    {
+      name: "PUF_Panel_Quality_Certificate.pdf",
+      size: "2.1 MB",
+      date: "Nov 12, 2025",
+    },
   ];
 
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -113,13 +156,17 @@ export default function ProjectTracker() {
                   </div>
 
                   {/* Context */}
-                  <div className={`rounded-xl p-4 transition-all duration-200 border ${
-                    isCurrent 
-                      ? "bg-teal-accent/5 border-teal-accent/20" 
-                      : "bg-[#0C2340]/30 border-transparent hover:border-white/5"
-                  }`}>
+                  <div
+                    className={`rounded-xl p-4 transition-all duration-200 border ${
+                      isCurrent
+                        ? "bg-teal-accent/5 border-teal-accent/20"
+                        : "bg-[#0C2340]/30 border-transparent hover:border-white/5"
+                    }`}
+                  >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                      <h4 className={`text-xs font-bold font-display ${isCurrent ? "text-teal-light" : "text-white"}`}>
+                      <h4
+                        className={`text-xs font-bold font-display ${isCurrent ? "text-teal-light" : "text-white"}`}
+                      >
                         {step.title}
                       </h4>
                       <span className="text-[9px] font-mono text-silver flex items-center gap-1">
@@ -127,7 +174,9 @@ export default function ProjectTracker() {
                         {step.date}
                       </span>
                     </div>
-                    <p className="text-xs text-silver/80 leading-relaxed">{step.description}</p>
+                    <p className="text-xs text-silver/80 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               );
@@ -144,7 +193,10 @@ export default function ProjectTracker() {
 
           <div className="divide-y divide-white/5">
             {specs.map((spec, idx) => (
-              <div key={idx} className="flex flex-col sm:flex-row py-3 gap-1 sm:gap-4 justify-between">
+              <div
+                key={idx}
+                className="flex flex-col sm:flex-row py-3 gap-1 sm:gap-4 justify-between"
+              >
                 <span className="text-xs text-silver/70 font-semibold sm:w-1/4 shrink-0">
                   {spec.label}
                 </span>
@@ -166,7 +218,8 @@ export default function ProjectTracker() {
             Document Vault
           </h3>
           <p className="text-xs text-silver/80 mb-4 leading-relaxed">
-            Access secure engineering drafts, compliance files, and pricing sheets.
+            Access secure engineering drafts, compliance files, and pricing
+            sheets.
           </p>
 
           <div className="space-y-3">
@@ -196,25 +249,36 @@ export default function ProjectTracker() {
 
         {/* Contact Coordinator & Modification request callback */}
         <div className="rounded-2xl border border-white/5 bg-[#0C2340]/60 p-6 shadow-md">
-          <h3 className="text-sm font-bold text-white mb-4 font-display">Project Coordination</h3>
+          <h3 className="text-sm font-bold text-white mb-4 font-display">
+            Project Coordination
+          </h3>
 
           <div className="flex items-center gap-3 p-3 rounded-xl bg-white/2 border border-white/5 mb-5">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-accent text-sm font-bold text-white">
               KV
             </div>
             <div>
-              <div className="text-xs font-semibold text-white">Karan Varma</div>
-              <div className="text-[10px] text-silver">Project Lead Engineer (Pune)</div>
-              <div className="text-[10px] text-teal-light mt-0.5">+91 80550 10620</div>
+              <div className="text-xs font-semibold text-white">
+                Karan Varma
+              </div>
+              <div className="text-[10px] text-silver">
+                Project Lead Engineer (Pune)
+              </div>
+              <div className="text-[10px] text-teal-light mt-0.5">
+                +91 80550 10620
+              </div>
             </div>
           </div>
 
           {callbackRequestSent ? (
             <div className="rounded-xl border border-teal-accent/20 bg-teal-accent/5 p-4 text-center">
               <CheckCircle2 className="h-8 w-8 text-teal-light mx-auto mb-2" />
-              <div className="text-xs font-semibold text-white">Callback Request Sent</div>
+              <div className="text-xs font-semibold text-white">
+                Callback Request Sent
+              </div>
               <div className="text-[10px] text-silver mt-1 leading-relaxed">
-                Karan Varma will reach out via call or WhatsApp within 2 working hours.
+                Karan Varma will reach out via call or WhatsApp within 2 working
+                hours.
               </div>
             </div>
           ) : (
@@ -227,7 +291,9 @@ export default function ProjectTracker() {
                 placeholder="Your Name"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-full rounded-xl bg-[#0C2340] border border-white/5 p-2.5 text-xs text-white placeholder-silver/40 focus:outline-none focus:border-teal-light transition-colors"
               />
               <input
@@ -235,13 +301,21 @@ export default function ProjectTracker() {
                 placeholder="Phone Number"
                 required
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    phone: e.target.value.replace(/\D/g, "").slice(0, 10),
+                  })
+                }
+                maxLength={10}
                 className="w-full rounded-xl bg-[#0C2340] border border-white/5 p-2.5 text-xs text-white placeholder-silver/40 focus:outline-none focus:border-teal-light transition-colors"
               />
               <textarea
                 placeholder="What revisions do you need? (e.g. door orientation, compressor brand)"
                 value={formData.notes}
-                onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, notes: e.target.value })
+                }
                 className="w-full rounded-xl bg-[#0C2340] border border-white/5 p-2.5 text-xs text-white placeholder-silver/40 focus:outline-none focus:border-teal-light transition-colors h-16 resize-none"
               />
               <button
