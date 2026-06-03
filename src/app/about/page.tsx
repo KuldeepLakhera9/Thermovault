@@ -245,7 +245,13 @@ export default function AboutPage() {
     window.dispatchEvent(event);
   };
 
-  const row1Brands = [
+  interface Brand {
+    name: string;
+    img?: string;
+    logo?: React.ReactNode;
+  }
+
+  const row1Brands: Brand[] = [
     { name: "Kingspan", img: "/images/logo/kingspan@logotyp.us.png" },
     { name: "JSW", img: "/images/logo/jsw@logotyp.us.png" },
     { name: "MOUNT", logo: <MountLogo /> },
@@ -255,7 +261,7 @@ export default function AboutPage() {
     { name: "EMERSON", img: "/images/logo/emerson-electric@logotyp.us.png" },
   ];
 
-  const row2Brands = [
+  const row2Brands: Brand[] = [
     { name: "Danfoss", img: "/images/logo/danfose@logotyp.us.png" },
     { name: "Bitzer", img: "/images/logo/bitzer@logotyp.us.png" },
     { name: "CAREL", img: "/images/logo/carel@logotyp.us.png" },

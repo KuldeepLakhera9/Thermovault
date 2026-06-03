@@ -40,6 +40,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-800 selection:bg-blue-600 selection:text-white relative">
+        <ScrollToTop />
         <ScrollProgress />
         <MicroInteractions />
         {children}

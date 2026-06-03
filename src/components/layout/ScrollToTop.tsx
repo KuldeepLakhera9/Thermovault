@@ -31,14 +31,28 @@ export default function ScrollToTop() {
 
     const doScroll = () => {
       try {
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        const html = document.documentElement;
+        const body = document.body;
+
+        // Force instant scroll by bypassing CSS smooth scroll behavior
+        const originalHtmlScroll = html.style.scrollBehavior;
+        const originalBodyScroll = body.style.scrollBehavior;
+        html.style.scrollBehavior = "auto";
+        body.style.scrollBehavior = "auto";
+
+        window.scrollTo(0, 0);
+        html.scrollTop = 0;
+        body.scrollTop = 0;
+
+        // Restore original scroll behavior on the next frame
+        window.requestAnimationFrame(() => {
+          html.style.scrollBehavior = originalHtmlScroll;
+          body.style.scrollBehavior = originalBodyScroll;
+        });
       } catch (e) {
         try {
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-        } catch (e) {
-          /* ignore */
-        }
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        } catch (err) {}
       }
     };
 
@@ -53,6 +67,7 @@ export default function ScrollToTop() {
     // Fallback retries to handle images/fonts/layout shifts
     const t1 = window.setTimeout(doScroll, 120);
     const t2 = window.setTimeout(doScroll, 300);
+    const t3 = window.setTimeout(doScroll, 600);
 
     return () => {
       try {
@@ -60,6 +75,7 @@ export default function ScrollToTop() {
       } catch (e) {}
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
     };
   }, [pathname]);
 
