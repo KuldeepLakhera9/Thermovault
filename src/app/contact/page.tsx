@@ -112,7 +112,7 @@ export default function ContactPage() {
               <div className="space-y-4 text-xs sm:text-sm text-slate-600">
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>At post Kadadhe Colony Rajgurunagar, Pune</span>
+                  <span>GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-blue-600 shrink-0" />
@@ -145,8 +145,8 @@ export default function ContactPage() {
 
                 <div className="relative z-10 h-full w-full">
                   <iframe
-                    title="ThermoVault Rajgurunagar Location"
-                    src="https://www.google.com/maps?q=At%20post%20Kadadhe%20Colony%20Rajgurunagar%2C%20Pune&output=embed"
+                    title="ThermoVault Shikrapur Location"
+                    src="https://www.google.com/maps?q=GAT%20NO%20-1051%2C%20SHOP%20NO%20-05%2CNEAR%20SHIVSHANTI%20PETROLEUM%2CMALTHAN%20PHATA%2CSHIKRAPURE%20412208&output=embed"
                     className="absolute inset-0 w-full h-full rounded-2xl border-0 pointer-events-auto z-10"
                     loading="lazy"
                     allowFullScreen
@@ -156,7 +156,7 @@ export default function ContactPage() {
                   <div className="absolute top-3 left-3 z-20 pointer-events-none bg-black/30 text-white rounded-md px-3 py-1">
                     <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider font-mono">
                       <Terminal className="h-4 w-4 text-white" />
-                      <span>Pune Rajgurunagar Map</span>
+                      <span>Shikrapur Map</span>
                     </div>
                   </div>
                 </div>
