@@ -36,6 +36,12 @@ import {
   Hammer,
   CheckSquare,
   HeartHandshake,
+  Calculator,
+  HelpCircle,
+  CheckCircle2,
+  FileCheck,
+  Sliders,
+  Send,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -139,6 +145,13 @@ export default function ServicesPage() {
       image: "/images/amc_maintenance.png",
       slug: "amc",
       icon: Wrench,
+    },
+    {
+      title: "Subsidy Assistant",
+      desc: "Interactive eligibility checks, DPR dossier mapping, and government grant advisory (NHB/NABARD).",
+      image: "/images/amc_maintenance.png",
+      slug: "subsidy-assistant",
+      icon: Calculator,
     },
   ];
 
@@ -373,7 +386,7 @@ export default function ServicesPage() {
 
                   <div className="p-6 pt-0">
                     <span className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-600 transition-colors">
-                      <span>Learn More</span>
+                      <span>Explore solutions</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>

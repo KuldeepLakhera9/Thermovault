@@ -45,7 +45,8 @@ export default function Navbar() {
         { label: "MUSHROOM & SAFFRON CULTIVATION", href: "/services/mushroom-saffron-cultivation" },
         { label: "RIPENING CHAMBERS", href: "/services/ripening-chambers" },
         { label: "BLAST CHILLERS", href: "/services/blast-chillers" },
-        { label: "AMC & MAINTENANCE", href: "/services/amc" }
+        { label: "AMC & MAINTENANCE", href: "/services/amc" },
+        { label: "SUBSIDY ASSISTANT", href: "/services/subsidy-assistant" }
       ]
     },
     { label: "PRODUCTS", href: "/products" },
