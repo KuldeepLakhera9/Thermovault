@@ -55,7 +55,7 @@ export default function CareersPage() {
       id: "thermal-sizing-engineer",
       title: "Thermal Sizing Engineer (HVAC/R)",
       dept: "Engineering",
-      location: "GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208",
+      location: "GATE NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208",
       type: "Full-Time",
       experience: "2 - 4 Years",
       desc: "Responsible for engineering precise heat loads, selecting optimal condensing units and evaporators, and drafting custom cold room layout drawings.",
@@ -118,7 +118,7 @@ export default function CareersPage() {
       id: "graduate-engineering-trainee",
       title: "Graduate Engineering Trainee (GET) - Design",
       dept: "Engineering",
-      location: "GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208",
+      location: "GATE NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208",
       type: "Internship (Convertible)",
       experience: "Fresh Graduate",
       desc: "Kickstart your career in thermodynamic sciences by assisting senior project designers in compiling bill of materials, engineering drawings, and quality control checklists.",
@@ -273,7 +273,7 @@ export default function CareersPage() {
                 Growth & Ownership
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Located at GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208, we offer flat
+                Located at GATE NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208, we offer flat
                 hierarchy networks where trainees and senior engineers align to
                 design and deliver.
               </p>
@@ -307,11 +307,10 @@ export default function CareersPage() {
                       setActiveTab(tab);
                       setExpandedJob(null);
                     }}
-                    className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all ${
-                      activeTab === tab
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all ${activeTab === tab
                         ? "bg-[#0C2340] text-white shadow-sm"
                         : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100"
-                    }`}
+                      }`}
                   >
                     {tab}
                   </button>

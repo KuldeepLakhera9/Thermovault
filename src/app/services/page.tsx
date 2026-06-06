@@ -149,7 +149,7 @@ export default function ServicesPage() {
     {
       title: "Subsidy Assistant",
       desc: "Interactive eligibility checks, DPR dossier mapping, and government grant advisory (NHB/NABARD).",
-      image: "/images/amc_maintenance.png",
+      image: "/images/subsidy_assistant.png",
       slug: "subsidy-assistant",
       icon: Calculator,
     },
@@ -385,7 +385,7 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="p-6 pt-0">
-                    <span className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-600 transition-colors">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 hover:bg-blue-500 px-4 py-2 text-[10px] font-bold text-white transition-all shadow-md shadow-blue-600/20 hover:scale-105 active:scale-95 group-hover:bg-blue-500 w-fit shrink-0">
                       <span>Explore solutions</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </span>

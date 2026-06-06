@@ -112,7 +112,7 @@ export default function ContactPage() {
               <div className="space-y-4 text-xs sm:text-sm text-slate-600">
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208</span>
+                  <span>GATE NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-blue-600 shrink-0" />
@@ -341,17 +341,15 @@ export default function ContactPage() {
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className={`w-full flex items-center justify-between p-5 text-left text-xs font-bold transition-colors font-display ${
-                      isOpen
+                    className={`w-full flex items-center justify-between p-5 text-left text-xs font-bold transition-colors font-display ${isOpen
                         ? "text-blue-600 bg-slate-50/50"
                         : "text-[#0c2340] hover:bg-slate-50/30"
-                    }`}
+                      }`}
                   >
                     <span>{faq.q}</span>
                     <ChevronDown
-                      className={`h-4.5 w-4.5 text-slate-400 transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-blue-600" : ""
-                      }`}
+                      className={`h-4.5 w-4.5 text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-blue-600" : ""
+                        }`}
                     />
                   </button>
 

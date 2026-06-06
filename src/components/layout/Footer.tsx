@@ -136,7 +136,7 @@ export default function Footer() {
             <div className="flex items-start gap-2.5">
               <MapPin className="h-4 w-4 shrink-0 text-blue-400 mt-0.5" />
               <span>
-                GAT NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208
+                GATE NO -1051, SHOP NO -05,NEAR SHIVSHANTI PETROLEUM,MALTHAN PHATA,SHIKRAPURE 412208
               </span>
             </div>
             <div className="flex items-center gap-2.5">
