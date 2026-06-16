@@ -46,13 +46,13 @@ export default function RootLayout({
         {children}
 
         {/* Floating Sticky Social Media Dock */}
-        <div className="fixed bottom-24 right-6 z-50 flex flex-col gap-3.5 items-center select-none bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 shadow-lg">
+        <div className="fixed bottom-24 right-6 z-50 flex flex-col gap-3 items-center select-none">
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/ominaikade0106?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-[#0a66c2] hover:scale-115 transition-all duration-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-[#0a66c2] hover:bg-white/20 hover:scale-115 hover:shadow-lg transition-all duration-300"
             title="LinkedIn"
           >
             <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ export default function RootLayout({
             href="https://www.instagram.com/thermovault_systems?igsh=NTh3b2lrZ3VhdnA2"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-[#e4405f] hover:scale-115 transition-all duration-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-[#e4405f] hover:bg-white/20 hover:scale-115 hover:shadow-lg transition-all duration-300"
             title="Instagram"
           >
             <svg className="h-5 w-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
@@ -80,7 +80,7 @@ export default function RootLayout({
             href="https://www.facebook.com/profile.php?id=100067437094413"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-[#1877f2] hover:scale-115 transition-all duration-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-[#1877f2] hover:bg-white/20 hover:scale-115 hover:shadow-lg transition-all duration-300"
             title="Facebook"
           >
             <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
